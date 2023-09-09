@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Loading...</title>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <div class="loader">
+            <style>
+                .loader {
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;
+                    z-index: 100000000;
+                    background: #fff;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .loader-progressbar {
+                    width: 300px;
+                    height: 25px;
+                    border-radius: 30px;
+                    background: #ffffff;
+                    box-shadow: inset 23px 23px 46px #ebebeb,
+                            inset -23px -23px 46px #ffffff;
+                    overflow: hidden;
+                }
+
+                .loader-title {
+                    font-size: 50px;
+                    font-weight: bold;
+                    font-family: 'Roboto', sans-serif;
+                    margin-bottom: 15px;
+                }
+
+                .loader-progressbar-inthe {
+                    height: 100%;
+                    width: 60px;
+                    animation: loader-right ease-in-out 5s infinite;
+                    background: #00a3ff;
+                }
+
+                @keyframes loader-right{
+                    from{
+                        width: 0px;
+                    }
+                    70%{
+                        width: 100%;
+                    }
+                    to{
+                        width: 0px;
+                    }
+                }
+            </style>
+            <div class="loader-title">Загрузка</div>
+            <div class="loader-progressbar">
+                <div class="loader-progressbar-inthe">
+                </div>
+            </div>
+        </div>
+        <div class="frame" id="greeting">
+            <div class="frame-box">
+                <div class="frame-box-title">Привет!</div>
+                <div class="frame-box-description">Я просто хочу поздравить тебя с днем рождения</div>
+            </div>
+            <div class="helements">
+                <div class="emoji abs-top-right">
+                    <img src="assets/images/emoji-cool.svg">
+                </div>
+                <div class="emoji abs-bottom-left">
+                    <img src="assets/images/emoji-clap.svg">
+                </div>
+                <div class="nextBtn abs-bottom-right" onclick="nextFrame();">
+                    <img src="assets/images/next.svg">
+                </div>
+            </div>
+        </div>
+        <div class="frame" id="so">
+            <div class="frame-box">
+                <div class="frame-box-title">Чтож</div>
+                <div class="frame-box-description">Надеюсь, что ты останешься такой же классной!</div>
+            </div>
+            <div class="helements">
+                <div class="emoji abs-top-right">
+                    <img src="assets/images/emoji-think.svg">
+                </div>
+                <div class="emoji abs-bottom-left">
+                    <img src="assets/images/emoji-birthday.svg">
+                </div>
+                <div class="nextBtn abs-bottom-right" onclick="nextFrame();">
+                    <img src="assets/images/next.svg">
+                </div>
+                <!-- <div class="previuosBtn abs-top-left" onclick="previousFrame();">
+                    <img src="assets/images/next.svg">
+                </div> -->
+            </div>
+        </div>
+        <div class="frame" id="hm">
+            <div class="frame-box">
+                <div class="frame-box-title">Хмм...</div>
+                <div class="frame-box-description">Уверен, что у тебя все всегда будет получаться)</div>
+            </div>
+            <div class="helements">
+                <div class="emoji abs-top-right">
+                    <img src="assets/images/emoji-cowboy.svg">
+                </div>
+                <div class="emoji abs-bottom-left">
+                    <img src="assets/images/emoji-ghost.svg">
+                </div>
+                <div class="nextBtn abs-bottom-right" onclick="nextFrame();">
+                    <img src="assets/images/next.svg">
+                </div>
+                <!-- <div class="previuosBtn abs-top-left" onclick="previousFrame();">
+                    <img src="assets/images/next.svg">
+                </div> -->
+            </div>
+        </div>
+        <div class="frame" id="hm">
+            <div class="frame-box">
+                <div class="frame-box-title">Ира,</div>
+                <div class="frame-box-description centered">С Днем Рождения!</div>
+            </div>
+            <div class="helements">
+                <div class="emoji abs-top-right">
+                    <img src="assets/images/emoji-top.svg">
+                </div>
+                <div class="mascot abs-bottom-left">
+                    <img src="assets/images/bithday-balls.svg">
+                </div>
+                <div class="mascot abs-bottom-right" onclick="nextFrame();">
+                    <img src="assets/images/man-in-bushes.svg">
+                </div>
+                <!-- <div class="previuosBtn abs-top-left" onclick="previousFrame();">
+                    <img src="assets/images/next.svg">
+                </div> -->
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/5.0.2/typeit.min.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script>
+            document.title = 'Поздравляю!';
+            window.onload = function(){
+                setTimeout(() => document.querySelector('.loader').remove(), 2000);
+                startTypeIt(document.querySelector('.frame'), true);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,199 @@
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.frame {
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F9F3E4;
+    position: absolute;
+}
+
+.abs-bottom-left {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.abs-top-right {
+    position: absolute;
+    top: 45px;
+    right: 45px;
+}
+
+.abs-bottom-right {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}
+
+.frame-box {
+    width: calc(100% - 200px);
+    height: calc(100% - 200px);
+    display: flex;
+    flex-direction: column;
+    /*background: linear-gradient(69.65deg, rgb(255 255 255 / 42%) 0%, rgb(255 255 255 / 69%) 100%);*/
+    border-radius: 15px;
+    padding: 20px 60px;
+    background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 12.5px );
+-webkit-backdrop-filter: blur( 12.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.frame.current {
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+}
+
+.frame-box-description {
+    font-size: 150px;
+    font-weight: bold;
+}
+
+.frame-box-title {
+    font-size: 100px;
+    font-weight: bold;
+    color: #747474;
+}
+
+.helements > div {
+    animation: scdown 3s ease-in-out infinite;
+}
+
+@keyframes scdown{
+    from{
+        right: 0px;
+    }
+    50%{
+        right: 45px;
+    }
+    to{
+        right: 0px;
+    }
+}
+
+
+@keyframes sctop{
+    from{
+        top: 0px;
+    }
+    50%{
+        top: 45px;
+    }
+    to{
+        top: 0px;
+    }
+}
+
+@keyframes scdownleft{
+    from{
+        bottom: 0px;
+    }
+    50%{
+        bottom: -45px;
+    }
+    to{
+        bottom: 0px;
+    }
+}
+
+.emoji.abs-top-right {
+    animation: sctop 3s ease-in-out infinite;
+    animation-iteration-count: infinite;
+}
+
+.emoji.abs-bottom-left {
+    animation: scdownleft 3s ease-in-out infinite;
+}
+
+.mascot.abs-bottom-right {
+    bottom: -5px;
+}
+
+/* Dimensions */
+
+@media screen and (max-width: 1400px){
+    .frame-box-description{
+        font-size: 130px;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    .frame-box-title{
+        font-size: 70px;
+    }
+    
+    .frame-box-description{
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    .frame-box-title{
+        font-size: 70px;
+    }
+    
+    .frame-box-description{
+        font-size: 100px;
+    }
+}
+@media screen and (max-width: 800px){
+    .frame-box-title{
+        font-size: 30px;
+    }
+    
+    .frame-box-description{
+        font-size: 80px;
+    }
+
+    .emoji > img{
+        width: 180px;
+    }
+
+    .mascot.abs-bottom-right > img{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .frame-box-title{
+        font-size: 30px;
+    }
+    
+    .frame-box-description{
+        font-size: 50px;
+    }
+
+    .emoji > img{
+        width: 100px;
+    }
+
+    .mascot.abs-bottom-right > img{
+        width: 400px;
+    }
+
+    .mascot.abs-bottom-left > img{
+        max-width: 100%;
+    }
+
+    .mascot.abs-bottom-left{
+        animation: none;
+    }
+
+    .frame-box {
+        width: calc(100% - 150px);
+        height: calc(100% - 100px);
+    }
+}
