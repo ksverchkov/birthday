@@ -122,6 +122,14 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     bottom: -5px;
 }
 
+#so {
+    background: #E7E4F9;
+}
+
+#hm {
+    background: #E4F8F9;
+}
+
 /* Dimensions */
 
 @media screen and (max-width: 1400px){
@@ -165,6 +173,10 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     .mascot.abs-bottom-right > img{
         width: 400px;
     }
+
+    .emoji.abs-bottom-left > img {
+        width: 250px;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -195,5 +207,9 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     .frame-box {
         width: calc(100% - 150px);
         height: calc(100% - 100px);
+    }
+
+    .emoji.abs-bottom-left > img {
+        width: 250px;
     }
 }
