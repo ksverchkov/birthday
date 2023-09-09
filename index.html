@@ -152,6 +152,9 @@
             window.onload = function(){
                 setTimeout(() => document.querySelector('.loader').remove(), 2000);
                 startTypeIt(document.querySelector('.frame'), true);
+                let style = document.createElement('style');
+                style.innerHTML = `.frame{display: none;} .current{display: flex !important;}`;
+                document.body.append(style);
             }
         </script>
     </body>
